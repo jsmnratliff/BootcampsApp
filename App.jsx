@@ -1,6 +1,6 @@
 import { Routes } from 'react-router-dom';
 import './App.css';
-import Navbar from './components/Navbar';
+import Navbar from './client/components/Navbar';
 import Campsdisplay from './pages/CampsDisplay';
 import Singlecamp from './pages/SingleCamp';
 import CampForm from './pages/CampForm';

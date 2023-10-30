@@ -21,7 +21,19 @@ app.use((req, res, next)=> {
     }
     next();
 })
+
 app.use(express.static(path.join(__dirname, "../client/dist")));
+
+app.get("/states", async (req, res) => {
+    try {
+        let dbResponse = await State.find();
+        res.send(dbResponse)
+    } catch(err) {
+        res.status(400).send("error getting the states")
+    }
+});
+
+
 app.get('/*', (req, res) => {
     res.sendFile(path.join(__dirname, 'dist', 'index.html'));
   });
